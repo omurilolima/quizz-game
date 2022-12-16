@@ -1,16 +1,36 @@
 // Wait for the DOM to finish loading before running the game
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener('DOMContentLoaded', runGame);
+ 
 
-}
 
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
  */
-function runGame(); {
+function loadPage() {
 
+    
 }
+
+
+function runGame() {
+
+    let fullQuestion = fullQuestions[0];
+    let question = document.getElementById('question');
+    question.textContent = fullQuestion.question;
+
+    let answer1 = document.getElementById('answer1');
+    answer1.textContent = fullQuestion.options[0];
+    let answer2 = document.getElementById('answer2');
+    answer2.textContent = fullQuestion.options[1];
+    let answer3 = document.getElementById('answer3');
+    answer3.textContent = fullQuestion.options[2];
+    let answer4 = document.getElementById('answer4');
+    answer4.textContent = fullQuestion.options[3];
+    
+}
+
 
 /**
  * Check if user answer is correct
@@ -41,7 +61,7 @@ function incrementWrongAnswer() {
 /**
  * Create an array of objects with all the questions, options, correct answer and image
  */
-let question = [
+let fullQuestions = [
 {
     "question" : "Tea originated in which country?",
     "options": ["India","Sri Lanka","United Kingdom","China"],
