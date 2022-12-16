@@ -1,25 +1,17 @@
 // Wait for the DOM to finish loading before running the game
 
-document.addEventListener('DOMContentLoaded', runGame);
- 
-
+document.addEventListener('DOMContentLoaded', pageLoaded);
 
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
  */
-function loadPage() {
+function pageLoaded() {
 
-    
-}
-
-
-function runGame() {
-
+    // Display questions
     let fullQuestion = fullQuestions[0];
     let question = document.getElementById('question');
     question.textContent = fullQuestion.question;
-
     let answer1 = document.getElementById('answer1');
     answer1.textContent = fullQuestion.options[0];
     let answer2 = document.getElementById('answer2');
@@ -29,16 +21,37 @@ function runGame() {
     let answer4 = document.getElementById('answer4');
     answer4.textContent = fullQuestion.options[3];
     
+    // Add event listeners for user click and get user answer
+    getUserAnswer();
 }
 
 
 /**
- * Check if user answer is correct
+ * Get user answer and check if user answer is correct
  */
-function checkAnswer() {
-
+function getUserAnswer() {
+    
+    let answers = document.getElementsByClassName("answer");
+    for (let answer of answers) {
+        answer.addEventListener("click", function() {
+            if (this.id === "answer1") {
+                alert('You clicked answer1');
+                console.log(this.id);
+            } else if (this.id === "answer2") {
+                 alert('You clicked answer2');
+                 console.log(this.id);
+            } else if (this.id === "answer3") {
+                 alert('You clicked answer3');
+                 console.log(this.id);
+            } else if (this.id === "answer4") {
+                 alert('You clicked answer4');
+                 console.log(this.id);
+            } else {
+                throw "Not implemented. Aborting";
+            }
+        });
+    } 
 }
-
 
 /**
  * Gets the current score from the DOM and increments it by 1
