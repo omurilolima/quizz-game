@@ -11,7 +11,7 @@ body {
 
 .heading {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .logo {
@@ -21,7 +21,31 @@ body {
 
 #question {
     display: block;
-    padding: 5rem;
+    padding: 2rem;
     background-color: lightsalmon;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* --------- Game layout */
+
+.game-area {
+    background-color: #E6ECF0;
+    box-sizing: border-box;
+    width: 85%;
+    height: 68vh;
+    max-height: 450px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+.btn {
+    width: 80%;
+    height: 3rem;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1.2px;
+    color: #E6ECF0;
+    background-color: black;
+    margin-bottom: 1rem;
 }
