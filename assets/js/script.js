@@ -22,36 +22,38 @@ function pageLoaded() {
     answer4.textContent = fullQuestion.options[3];
     
     // Add event listeners for user click and get user answer
-    getUserAnswer();
+    addClickEvent();
+    // Check the answer and respond to the user if it is or not
+    
 }
 
 
 /**
- * Get user answer and check if user answer is correct
+ * Get user answer
  */
-function getUserAnswer() {
+function addClickEvent() {
     
     let answers = document.getElementsByClassName("answer");
     for (let answer of answers) {
         answer.addEventListener("click", function() {
-            if (this.id === "answer1") {
-                alert('You clicked answer1');
-                console.log(this.id);
-            } else if (this.id === "answer2") {
-                 alert('You clicked answer2');
-                 console.log(this.id);
-            } else if (this.id === "answer3") {
-                 alert('You clicked answer3');
-                 console.log(this.id);
-            } else if (this.id === "answer4") {
-                 alert('You clicked answer4');
-                 console.log(this.id);
-            } else {
-                throw "Not implemented. Aborting";
-            }
+            checkAnswer(this.id);
         });
-    } 
+    }
 }
+
+/**
+ * Check the answer and respond to the user if it is or not
+ */
+function checkAnswer(userAnswer) {
+    if (userAnswer.charAt(6) == fullQuestions[0].correct + 1){
+        alert("It is right. Congratulations!");
+    }
+    else {
+        alert(`Sorry. The correct answer is ${fullQuestions[0].options[fullQuestions[0].correct]}`);
+    }
+
+}
+
 
 /**
  * Gets the current score from the DOM and increments it by 1
