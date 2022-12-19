@@ -47,9 +47,11 @@ function addClickEvent() {
 function checkAnswer(userAnswer) {
     if (userAnswer.charAt(6) == fullQuestions[0].correct + 1){
         alert("It is right. Congratulations!");
+        incrementScore();
     }
     else {
         alert(`Sorry. The correct answer is ${fullQuestions[0].options[fullQuestions[0].correct]}`);
+        incrementWrongAnswer();
     }
 
 }
