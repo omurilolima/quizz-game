@@ -43,7 +43,8 @@ function addClickEvent() {
  */
 function checkAnswer(userAnswer) {
         
-    if (userAnswer == fullQuestions[0].correct){
+    if (userAnswer == fullQuestions[currentQuestionIndex].correct){
+        console.log(userAnswer);
         alert("It is right. Congratulations!");
         incrementScore();
         nextQuestion();
@@ -52,6 +53,7 @@ function checkAnswer(userAnswer) {
         alert(`Sorry. The correct answer is ${fullQuestions[currentQuestionIndex].correct}`);
         incrementWrongAnswer();
         nextQuestion();
+        console.log(userAnswer);
     }
 
 }
