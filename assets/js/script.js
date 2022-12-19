@@ -2,31 +2,28 @@
 
 document.addEventListener('DOMContentLoaded', pageLoaded);
 
+let currentQuestionIndex = -1;
+
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
  */
 function pageLoaded() {
 
-    // Display questions
-    let fullQuestion = fullQuestions[0];
-    let question = document.getElementById('question');
-    question.textContent = fullQuestion.question;
-    let answer1 = document.getElementById('answer1');
-    answer1.textContent = fullQuestion.options[0];
-    let answer2 = document.getElementById('answer2');
-    answer2.textContent = fullQuestion.options[1];
-    let answer3 = document.getElementById('answer3');
-    answer3.textContent = fullQuestion.options[2];
-    let answer4 = document.getElementById('answer4');
-    answer4.textContent = fullQuestion.options[3];
+
+    shuffle(fullQuestions);
+
+    nextQuestion();
     
     // Add event listeners for user click and get user answer
     addClickEvent();
-    // Check the answer and respond to the user if it is or not
     
 }
 
+// function from tutorial at https://javascript.info/task/shuffle
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+}
 
 /**
  * Get user answer
@@ -45,17 +42,19 @@ function addClickEvent() {
  * Check the answer and respond to the user if it is or not
  */
 function checkAnswer(userAnswer) {
+        
     if (userAnswer.charAt(6) == fullQuestions[0].correct + 1){
         alert("It is right. Congratulations!");
         incrementScore();
-    }
+        nextQuestion();
+        }
     else {
         alert(`Sorry. The correct answer is ${fullQuestions[0].options[fullQuestions[0].correct]}`);
         incrementWrongAnswer();
+        nextQuestion();
     }
 
 }
-
 
 /**
  * Gets the current score from the DOM and increments it by 1
@@ -68,16 +67,35 @@ function incrementScore() {
 }
 
 /**
- * Gets the tally of incorrect answers from the DOM and increments it by 1
+ * Gets the current incorrect answers from the DOM and increments it by 1
  */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-/**
- * Create an array of objects with all the questions, options, correct answer and image
- */
+// Exclude the question from fullQuestion and show another random question
+function nextQuestion(){
+
+    ++currentQuestionIndex;
+    if (currentQuestionIndex < fullQuestions.length){
+        let fullQuestion = fullQuestions[currentQuestionIndex];
+        let question = document.getElementById('question');
+        question.textContent = fullQuestion.question;
+        let answer1 = document.getElementById('answer1');
+        answer1.textContent = fullQuestion.options[0];
+        let answer2 = document.getElementById('answer2');
+        answer2.textContent = fullQuestion.options[1];
+        let answer3 = document.getElementById('answer3');
+        answer3.textContent = fullQuestion.options[2];
+        let answer4 = document.getElementById('answer4');
+        answer4.textContent = fullQuestion.options[3];
+    } else {
+        alert("End Game!")
+    }
+}
+
+// Create an array of objects with all the questions, options, correct answer and image
 let fullQuestions = [
 {
     "question" : "Tea originated in which country?",
