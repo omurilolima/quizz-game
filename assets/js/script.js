@@ -10,7 +10,6 @@ let currentQuestionIndex = -1;
  */
 function pageLoaded() {
 
-
     shuffle(fullQuestions);
 
     nextQuestion();
@@ -20,7 +19,10 @@ function pageLoaded() {
     
 }
 
-// function from tutorial at https://javascript.info/task/shuffle
+/**
+ * 
+ * Gets and array and shuffle its elements. Function from tutorial at https://javascript.info/task/shuffle 
+ */
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
@@ -97,8 +99,15 @@ function nextQuestion(){
         let answer4 = document.getElementById('answer4');
         answer4.textContent = fullQuestion.options[3];
     } else {
-        alert(`End Game! You got ${document.getElementById("score").innerText}/15.`);
+        endGame();
     }   
+}
+
+function endGame(){
+    
+    let popup = document.getElementsByClassName('popup')[0];
+    console.log(popup);
+    popup.style.display = "block";
 }
 
 // Create an array of objects with all the questions, options, correct answer and image
