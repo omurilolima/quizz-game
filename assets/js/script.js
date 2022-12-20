@@ -53,7 +53,6 @@ function checkAnswer(userAnswer) {
         alert(`Sorry. The correct answer is ${fullQuestions[currentQuestionIndex].correct}`);
         incrementWrongAnswer();
         nextQuestion();
-        console.log(userAnswer);
     }
 
 }
@@ -98,8 +97,8 @@ function nextQuestion(){
         let answer4 = document.getElementById('answer4');
         answer4.textContent = fullQuestion.options[3];
     } else {
-        alert("End Game!")
-    }
+        alert(`End Game! You got ${document.getElementById("score").innerText}/15.`);
+    }   
 }
 
 // Create an array of objects with all the questions, options, correct answer and image
