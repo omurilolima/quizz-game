@@ -79,3 +79,15 @@ body {
     color: #E6ECF0;
     padding-top: 50%;
 }
+
+.button {
+    background-color: #445361;
+    color: #E6ECF0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #E6ECF0;
+    color: #445361;
+    cursor: pointer;
+}
