@@ -46,7 +46,6 @@ function addClickEvent() {
 function checkAnswer(userAnswer) {
         
     if (userAnswer == fullQuestions[currentQuestionIndex].correct){
-        console.log(userAnswer);
         alert("It is right. Congratulations!");
         incrementScore();
         nextQuestion();
@@ -103,11 +102,17 @@ function nextQuestion(){
     }   
 }
 
+/**
+ * Displayed when the game ends. Shows the final score.
+ */
 function endGame(){
     
     let popup = document.getElementsByClassName('popup')[0];
-    console.log(popup);
     popup.style.display = "block";
+
+    let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score2").innerText = score;
+
 }
 
 // Create an array of objects with all the questions, options, correct answer and image
