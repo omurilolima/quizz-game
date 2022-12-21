@@ -15,7 +15,7 @@ function pageLoaded() {
     nextQuestion();
     
     // Add event listeners for user click and get user answer
-    addClickEvent();
+    getUserAnswer();
     
 }
 
@@ -24,13 +24,15 @@ function pageLoaded() {
  * Gets and array and shuffle its elements. Function from tutorial at https://javascript.info/task/shuffle 
  */
 function shuffle(array) {
+
     array.sort(() => Math.random() - 0.5);
+
 }
 
 /**
  * Get user answer
  */
-function addClickEvent() {
+function getUserAnswer() {
     
     let answers = document.getElementsByClassName("answer");
     for (let answer of answers) {
@@ -38,6 +40,7 @@ function addClickEvent() {
             checkAnswer(this.innerText);
         });
     }
+
 }
 
 /**
@@ -72,8 +75,10 @@ function incrementScore() {
  * Gets the current incorrect answers from the DOM and increments it by 1
  */
 function incrementWrongAnswer() {
+
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
+
 }
 
 // Exclude the question from fullQuestion and show another random question
@@ -100,6 +105,7 @@ function nextQuestion(){
     } else {
         endGame();
     }   
+
 }
 
 /**
