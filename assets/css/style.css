@@ -1,9 +1,16 @@
+/* Color scheme */
+:root {
+    --white: #E6ECF0;
+    --black: #484554;
+    --third: #7066e0;
+}
+
 /* --------- Global style */
 
 body {
-    background-color: #E6ECF0;
+    background-color: var(--white);;
     font-family: "Raleway", sans-serif;
-    color: #445361;
+    color: var(--black);
     text-align: center;
 }
 
@@ -22,8 +29,8 @@ body {
 #question {
     display: block;
     padding: 1rem;
-    color: #E6ECF0;
-    background-color: #7066e0;
+    color: var(--white);
+    background-color: var(--third);
     margin-bottom: 1rem;
     height: 5rem;
 }
@@ -31,15 +38,14 @@ body {
 /* --------- Game layout */
 
 .game-area {
-    background-color: #E6ECF0;
+    background-color: var(--white);
     box-sizing: border-box;
     width: 77%;
-    height: 26rem;
+    height: 23rem;
     max-height: 435px;
     max-width: 579px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
 }
 
 .btn {
@@ -47,14 +53,14 @@ body {
     height: 3rem;
     font-family: "Raleway", sans-serif;
     letter-spacing: 1.2px;
-    color: #E6ECF0;
-    background-color: black;
+    color: var(--white);
+    background-color: var(--black);
     margin-bottom: 1rem;
     cursor: pointer;
 }
 
 .popup {
-    background-color: #445361;
+    background-color: var(--third);
     box-sizing: border-box;
     width: 37rem;
     height: 23rem;
@@ -63,23 +69,37 @@ body {
     margin-left: auto;
     margin-right: auto;
     top: 5rem;
-    position: fixed;
     display: none;
 }
 
 .popup-content {
-    color: #E6ECF0;
+    color: var(--white);
     padding-top: 20%;
 }
 
 .button {
-    background-color: #445361;
-    color: #E6ECF0;
+    background-color: var(--black);
+    color: var(--white);
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: #E6ECF0;
-    color: #445361;
+    background-color: var(--white);
+    color: var(--black);
     cursor: pointer;
+}
+
+.score-area {
+    font-size: 0.6rem;
+}
+
+footer {
+    background: var(--third);
+    color: var(--white);
+    padding: 2px 0px 2px 0px;
+    margin-top: 20px;
+    font-size: 0.6rem;
+    max-width: 579px;
+    margin-left: auto;
+    margin-right: auto;
 }

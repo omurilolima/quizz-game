@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/*jshint -W033 */
+
 // Array of objects with all the questions, options and correct answer
 const fullQuestions = [
     {
@@ -80,56 +83,55 @@ const fullQuestions = [
 // Variables to set the initial state of the game
 let currentQuestionIndex = -1;
 let questionNumber = 0;
-
+ 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener('DOMContentLoaded', pageLoaded);
-
+ 
 /**
- * The main game "loop", called when the script is first loaded
+ * The main game 'loop', called when the script is first loaded
  * and after the user's answer has been processed
  */
 function pageLoaded() {
-
-    document.getElementById("question-number").innerText = questionNumber;
-
+ 
+    document.getElementById('question-number').innerText = questionNumber;
+ 
     shuffle(fullQuestions);
-
+ 
     nextQuestion();
-    
+   
     // Add event listeners for user click and get user answer
     getUserAnswer();
-    
+   
 }
-
+ 
 /**
- * 
- * Gets and array and shuffle its elements. Function from tutorial at https://javascript.info/task/shuffle 
+ *
+ * Gets and array and shuffle its elements. Function from tutorial at https://javascript.info/task/shuffle
  */
 function shuffle(array) {
-
+ 
     array.sort(() => Math.random() - 0.5);
-
+ 
 }
-
+ 
 /**
  * Get user answer
  */
 function getUserAnswer() {
-    
-    let answers = document.getElementsByClassName("answer");
+   
+    let answers = document.getElementsByClassName('answer');
     for (let answer of answers) {
-        answer.addEventListener("click", function() {
-            checkAnswer(this.innerText);
-        });
+        answer.addEventListener('click', checkAnswer);
     }
-
+ 
 }
-
+ 
 /**
  * Check the answer and respond to the user if it is or not
  */
-function checkAnswer(userAnswer) {
-        
+function checkAnswer(event) {
+  	const userAnswer = event.target.innerText;
+       
     if (userAnswer == fullQuestions[currentQuestionIndex].correct){
         Swal.fire({
             icon: 'success',
@@ -150,46 +152,46 @@ function checkAnswer(userAnswer) {
         incrementWrongAnswer();
         nextQuestion();
     }
-
+ 
 }
-
+ 
 /**
  * Gets the current score from the DOM and increments it by 1. Increment question number by 1.
  */
 function incrementScore() {
-
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
-
-    document.getElementById("question-number").innerText = ++questionNumber;
-
+ 
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = ++oldScore;
+ 
+    document.getElementById('question-number').innerText = ++questionNumber;
+ 
 }
-
+ 
 /**
  * Gets the current incorrect answers from the DOM and increments it by 1.  Increment question number by 1.
  */
 function incrementWrongAnswer() {
-
-    let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
-
-    document.getElementById("question-number").innerText = ++questionNumber;
-
+ 
+    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++oldScore;
+ 
+    document.getElementById('question-number').innerText = ++questionNumber;
+ 
 }
-
+ 
 // Exclude the question from fullQuestion and show another random question
 function nextQuestion(){
-
+ 
     ++currentQuestionIndex;
     if (currentQuestionIndex < fullQuestions.length){
-
+ 
         let fullQuestion = fullQuestions[currentQuestionIndex];
         let question = document.getElementById('question');
         question.textContent = fullQuestion.question;
-        
+       
         // shuffle options
         shuffle(fullQuestion.options);
-
+ 
         // display question and options
         let answer1 = document.getElementById('answer1');
         answer1.textContent = fullQuestion.options[0];
@@ -199,38 +201,38 @@ function nextQuestion(){
         answer3.textContent = fullQuestion.options[2];
         let answer4 = document.getElementById('answer4');
         answer4.textContent = fullQuestion.options[3];
-
+ 
     } else {
-        
+       
         endGame();
-    
-    }   
-
+   
+    }  
+ 
 }
-
+ 
 /**
  * Displayed when the game ends. Shows the final score.
  */
 function endGame(){
-    
+   
     let popup = document.getElementsByClassName('popup')[0];
-    popup.style.display = "block";
-
-    let score = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score2").innerText = score;
-
-    // Event listener to refresh the page on click button "Play again"
-        
-    const button = document.getElementById("play-again");
-    button.addEventListener("click", playAgain);
-
+    popup.style.display = 'block';
+ 
+    let score = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score2').innerText = score;
+ 
+    // Event listener to refresh the page on click button 'Play again'
+       
+    const button = document.getElementById('play-again');
+    button.addEventListener('click', playAgain);
+ 
 }
-
+ 
 /**
  * Refresh the page to restart the game
  */
 function playAgain() {
-
+ 
     window.location.reload();
-
+ 
 }
