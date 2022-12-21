@@ -79,14 +79,10 @@ const fullQuestions = [
 
 // Variables to set the initial state of the game
 let currentQuestionIndex = -1;
-let questionNumber = 1;
-const button = document.getElementById("play-again");
+let questionNumber = 0;
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener('DOMContentLoaded', pageLoaded);
-
-
-
 
 /**
  * The main game "loop", called when the script is first loaded
@@ -139,6 +135,7 @@ function checkAnswer(userAnswer) {
             icon: 'success',
             title: 'Congratulations!',
             text: 'It is right.',
+            timer: 3000,
           })
         incrementScore();
         nextQuestion();
@@ -148,6 +145,7 @@ function checkAnswer(userAnswer) {
             icon: 'error',
             title: 'Sorry.',
             text: `The correct answer is ${fullQuestions[currentQuestionIndex].correct}`,
+            timer: 3000,
           })
         incrementWrongAnswer();
         nextQuestion();
@@ -205,10 +203,6 @@ function nextQuestion(){
     } else {
         
         endGame();
-        
-        // Event listener to refresh the page on click button "Play again"
-        
-        // button.addEventListener("click", playAgain());
     
     }   
 
@@ -225,6 +219,11 @@ function endGame(){
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("score2").innerText = score;
 
+    // Event listener to refresh the page on click button "Play again"
+        
+    const button = document.getElementById("play-again");
+    button.addEventListener("click", playAgain);
+
 }
 
 /**
@@ -235,4 +234,3 @@ function playAgain() {
     window.location.reload();
 
 }
-
