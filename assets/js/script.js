@@ -79,6 +79,7 @@ const fullQuestions = [
 
 // Variables to set the initial state of the game
 let currentQuestionIndex = -1;
+let questionNumber = 1;
 const button = document.getElementById("play-again");
 
 // Wait for the DOM to finish loading before running the game
@@ -92,6 +93,8 @@ document.addEventListener('DOMContentLoaded', pageLoaded);
  * and after the user's answer has been processed
  */
 function pageLoaded() {
+
+    document.getElementById("question-number").innerText = questionNumber;
 
     shuffle(fullQuestions);
 
@@ -153,22 +156,26 @@ function checkAnswer(userAnswer) {
 }
 
 /**
- * Gets the current score from the DOM and increments it by 1
+ * Gets the current score from the DOM and increments it by 1. Increment question number by 1.
  */
 function incrementScore() {
 
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
 
+    document.getElementById("question-number").innerText = ++questionNumber;
+
 }
 
 /**
- * Gets the current incorrect answers from the DOM and increments it by 1
+ * Gets the current incorrect answers from the DOM and increments it by 1.  Increment question number by 1.
  */
 function incrementWrongAnswer() {
 
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
+
+    document.getElementById("question-number").innerText = ++questionNumber;
 
 }
 
