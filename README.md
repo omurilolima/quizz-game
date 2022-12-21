@@ -62,3 +62,22 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 I used Google Fonts to select and import the fonts Raleway 
 
 ![Raleway Google Fonts](/assets/images/typography.png)
+
+
+## Features
+
+The page features a responsive navigation with the conventional placing of <strong>logo</strong> on top.
+The game starts with the loadpage, showing the first question. If the user refresh the page, the game restart.
+The <strong>footer</strong> show the author section.
+
+### Answer feedback
+
+Once the user clicks in any of the four buttons to choose it option to answer, a pop-up is displayed with the result. The user can click on the "OK" button to see the next question or after 3 seconds the pop-up disappears.
+
+![Answer feedback](/assets/images/answer-feedback.png)
+
+- <strong>End Game</strong>
+
+Once the user answers all the questions, the final score is featured. There is a button called "play again" which allows the user to restart the game.
+![End Game screen](/assets/images/end-game.png)
+

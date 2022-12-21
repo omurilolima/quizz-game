@@ -217,6 +217,9 @@ function endGame(){
    
     let popup = document.getElementsByClassName('popup')[0];
     popup.style.display = 'block';
+
+    let controlsArea = document.getElementsByClassName('controls-area')[0];
+    controlsArea.style.display = 'none';
  
     let score = parseInt(document.getElementById('score').innerText);
     document.getElementById('score2').innerText = score;
