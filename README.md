@@ -135,7 +135,7 @@ This project was developed using the [Gitpod IDE](https://gitpod.io/), committed
 To <strong>deploy this page to GitHub Pages</strong> from its [GitHub repository](https://github.com/omurilolima/quizz-game), the following steps were taken:
 
 1. Log into GitHub.
-2. From the list of repositories on the screen, select AJGreaves/portrait-artist.
+2. From the list of repositories on the screen, select omurilolima/quizz-game.
 3. From the menu items near the top of the page, select Settings.
 4. Scroll down to the GitHub Pages section.
 5. Under Source click the drop-down menu labelled None and select Master Branch
