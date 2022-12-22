@@ -87,7 +87,7 @@ Once the user answers all the questions, the final score is featured. There is a
 
 ## Technologies Used
 - This project uses HTML and CSS programming languages.
-- <strong>Git hub</strong> for version control and host: https://github.com/omurilolima/the-wine-bar  
+- <strong>Git hub</strong> for version control and host: https://omurilolima.github.io/quizz-game/  
 - <strong>Gitpod</strong> for coding: https://gitpod.io/ 
 - <strong>W3C HTML</strong> valitadion service: https://validator.w3.org/  
 - <strong>W3C CSS</strong> valitadion service: https://jigsaw.w3.org/css-validator/  
