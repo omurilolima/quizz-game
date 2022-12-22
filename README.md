@@ -102,7 +102,7 @@ Once the user answers all the questions, the final score is featured. There is a
 
 ## Testing
 
-Testing information can be found in separate [TESTING.md file](/documentation/testing.md)
+Testing information can be found in separate [TEST.md file](/TEST.md)
 
 ### Code Validator Testing
 - HTML
@@ -132,7 +132,7 @@ Testing information can be found in separate [TESTING.md file](/documentation/te
 
 This project was developed using the [Gitpod IDE](https://gitpod.io/), committed to git and pushed to [GitHub](https://github.com).
 
-To <strong>deploy this page to GitHub Pages</strong> from its [GitHub repository](https://github.com/omurilolima/the-wine-bar), the following steps were taken:
+To <strong>deploy this page to GitHub Pages</strong> from its [GitHub repository](https://github.com/omurilolima/quizz-game), the following steps were taken:
 
 1. Log into GitHub.
 2. From the list of repositories on the screen, select AJGreaves/portrait-artist.
@@ -171,20 +171,18 @@ To commit and push changes you need to follow these steps:
 
 In addition to the knowledge acquired in the [Professional Academy Diploma in Full Stack Software Development](https://www.ucd.ie/professionalacademy/findyourcourse/professional_diploma_in_software_development/) by [University College Dublin](https://www.ucd.ie/) and [Code Institute](https://codeinstitute.net/ie/), I also used the following sources to deal with specific points of this project:
 
-- Picking a colour scheme: [Tutorial by Kevin Powell](https://www.youtube.com/watch?v=mq8LYj6kRyE)
-- CSS tutorials at [W3School](https://www.w3schools.com/howto/default.asp)
-- Responsive Design: [Tutorial by Kevin Powell - 1](https://www.youtube.com/watch?v=VQraviuwbzU) and [Tutorial by Kevin Powell - 2](https://www.youtube.com/watch?v=2KL-z9A56SQ)
-- Markdown Guide: [Basic syntax](https://www.markdownguide.org/basic-syntax/) for create the README file.
-- CSS Flexbox: [A Visual Reference](https://www.reddit.com/r/webdev/comments/usln38/a_visual_reference_of_css_flexbox/).
+- How to Build a Popup with Just 17 Lines of Pure JavaScript: [Tutorial by Roger Melo](https://www.youtube.com/watch?v=AWIqJo_JOJY&t=192s)
+- Custom alert by [sweetalert2](https://sweetalert2.github.io/#configuration)
+- How to [Shuffle an array](https://javascript.info/task/shuffle)
+- How to [Perform Page Reload/Refresh in JavaScript When a Button is Clicked](https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/)
 
 ### Content
 
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/icons).
-- Images were taken from https://www.shutterstock.com/ and https://www.vivino.com/.
+- Content by [BuzzFeed](https://www.buzzfeed.com/lady_emerald/general-knowledge-difficult-edition-quiz) 
 
 ### Acknowledgments
 
-- This project was inspired by my own experience of building digital products for tech companies as a Product Manager / Product Owner for the previous 10 years.
+- This project was inspired by my own experience of building digital products for tech companies as a Product Manager / Product Owner for more than 10 years.
 
 ## Disclaimer
 

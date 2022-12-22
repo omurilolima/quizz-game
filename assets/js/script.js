@@ -106,7 +106,7 @@ function pageLoaded() {
  
 /**
  *
- * Gets and array and shuffle its elements. Function from tutorial at https://javascript.info/task/shuffle
+ * Gets and array and shuffle its elements.
  */
 function shuffle(array) {
  
