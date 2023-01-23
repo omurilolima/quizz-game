@@ -60,6 +60,11 @@ body {
     cursor: pointer;
 }
 
+.answer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
 .popup {
     background-color: var(--third);
     box-sizing: border-box;
@@ -100,7 +105,38 @@ footer {
     padding: 2px 0px 2px 0px;
     margin-top: 20px;
     font-size: 0.6rem;
-    max-width: 579px;
     margin-left: auto;
     margin-right: auto;
 }
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
+
+/* On screens that are 600px or less */
+@media screen and (max-width: 600px) {
+    .answer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+  }
+
+  /* On screens that are 600px or less */
+@media screen and (max-width: 375px) {
+    .answer {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+  }
