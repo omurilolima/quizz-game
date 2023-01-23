@@ -111,7 +111,7 @@ footer {
 
 #page-container {
     position: relative;
-    min-height: 90vh;
+    min-height: 95vh;
   }
   
   #content-wrap {
@@ -139,4 +139,8 @@ footer {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
+
+    #page-container {
+        min-height: 90vh;
+      }
   }
